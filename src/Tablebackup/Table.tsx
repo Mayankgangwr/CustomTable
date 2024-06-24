@@ -44,7 +44,7 @@ const Table: FC<ITableProps> = ({
     const [pagination, setPagination] = useState<IPagination>({
         currPage: 1,
         total: getNumberOfPage(initialTableRows.length, rowsPerPage ? rowsPerPage[0] : 10),
-        rowsPerPage: rowsPerPage ? rowsPerPage[0] : 40,
+        rowsPerPage: rowsPerPage ? rowsPerPage[0] : 10,
         paginationOptions: rowsPerPage ? rowsPerPage : [10, 15, 20],
     });
     const [offSet, setOffSet] = useState<ITableRow[]>([]);
