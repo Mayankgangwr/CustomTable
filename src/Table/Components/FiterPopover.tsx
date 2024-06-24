@@ -1,3 +1,4 @@
+
 import {
   Button,
   Dropdown,
@@ -14,7 +15,7 @@ import { FilterOperations } from "../Utils";
 import Styles from "../Table.module.scss";
 import DatePopverContent from "./DatePopverContent";
 
-const FilterPopoverContent: FC<IFilterPopoverProps> = ({
+const FiterPopoverContent: FC<IFilterPopoverProps> = ({
   column,
   handleFilter,
   options = undefined,
@@ -137,7 +138,7 @@ const FilterPopoverContent: FC<IFilterPopoverProps> = ({
   );
 };
 
-const FilterPopover: FC<IFilterPopoverProps> = ({
+const FiterPopover: FC<IFilterPopoverProps> = ({
   column,
   handleFilter,
   options = undefined,
@@ -167,7 +168,7 @@ const FilterPopover: FC<IFilterPopoverProps> = ({
             appliedFilter={appliedFilter}
           />
         ) : (
-          <FilterPopoverContent
+          <FiterPopoverContent
             column={column}
             dataType={dataType}
             options={options}
@@ -181,4 +182,4 @@ const FilterPopover: FC<IFilterPopoverProps> = ({
   </Popover>
 );
 
-export default FilterPopover;
+export default FiterPopover;

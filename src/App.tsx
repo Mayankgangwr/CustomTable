@@ -1,6 +1,6 @@
-import { ISort, ITableHeader, ITableRow } from './Tablebackup/Interface'
+import { ISort, ITableHeader, ITableRow } from './Table/Interface'
 import moment from 'moment';
-import Table from './Tablebackup/Table';
+import Table from './Table/Table';
 interface ITableData {
     name: string;
     description: string;
