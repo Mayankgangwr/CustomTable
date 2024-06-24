@@ -21,7 +21,6 @@ import {
     FilterOperationsEnum,
     IAppliedFilter,
     IPagination,
-    ISort,
     ISortState,
     ITableHeader,
     ITableItemSearchState,
@@ -41,7 +40,6 @@ const Table: FC<ITableProps> = ({
     const [tableRows, setTableRows] = useState<ITableRow[]>(initialTableRows);
     const [isSort, setIsSort] = useState<ISortState>(initialSort || { key: null, sortBy: null });
     const [searchItemBy, setSearchItemBy] = useState<ITableItemSearchState[] | undefined>(undefined);
-    const [searchVal, setSearchVal] = useState<string>("");
     const [appliedFilterMap, setAppliedFilterMap] = useState<Map<string, IAppliedFilter>>(new Map());
     const [pagination, setPagination] = useState<IPagination>({
         currPage: 1,
@@ -102,7 +100,6 @@ const Table: FC<ITableProps> = ({
     };
 
     const handleItemSearchFn = (searchVal: string) => {
-        setSearchVal(searchVal);
         const searchedRows = searchVal ? handleItemSearch(searchVal, initialTableRows, searchItemBy || []) : initialTableRows;
         setTableRows(searchedRows);
     };
@@ -123,11 +120,11 @@ const Table: FC<ITableProps> = ({
 
     return (
         <div className={Styles.TableContainer}>
-            {/* <TableItemSearch
+            <TableItemSearch
                 tableRows={tableRows}
                 searchBy={searchItemBy}
                 handleItemSearch={handleItemSearchFn}
-            /> */}
+            />
             <UITable className={Styles.UITable}>
                 <Thead className={Styles.Thead}>
                     {tableHeader.map((th, index) => (
@@ -165,11 +162,11 @@ const Table: FC<ITableProps> = ({
                     ))}
                 </Tbody>
             </UITable>
-            {/* <Pagination
+            <Pagination
             pagination={pagination}
             handleNumberOfRows={handleNumberOfRows}
             handlePagination={handlePagination}
-        /> */}
+        />
         </div>
     );
 };

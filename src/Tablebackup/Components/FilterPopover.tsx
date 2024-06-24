@@ -163,7 +163,7 @@ const FilterPopover: FC<IFilterPopoverProps> = ({
             dataType={dataType}
             options={options}
             handleFilter={handleFilter}
-            handleClearFilterfn={handleClearFilter}
+            handleClearFilter={handleClearFilter}
             appliedFilter={appliedFilter}
           />
         ) : (

@@ -33,7 +33,7 @@ const Pagination: FC<IPaginationProps> = ({ pagination, handleNumberOfRows, hand
             </span>
             <Dropdown
                 className={Styles.Dropdown}
-                value={`${pagination.rowInPage} Rows`}
+                value={`${pagination.rowsPerPage} Rows`}
                 onOptionSelect={(_event, data) => handleNumberOfRows(Number(data.optionValue))}
                 placeholder="Select Value"
             >

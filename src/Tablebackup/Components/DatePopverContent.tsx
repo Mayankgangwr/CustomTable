@@ -2,16 +2,16 @@ import {
     Button,
 } from "@fluentui/react-components";
 import { Calendar } from "@fluentui/react-calendar-compat";
-import { FilterOperationsEnum, IFiterPopoverProps } from "../Interface";
+import { FilterOperationsEnum, IFilterPopoverProps } from "../Interface";
 import { FC, useEffect, useState } from "react";
 import Styles from "../Table.module.scss";
 
-const DatePopverContent: FC<IFiterPopoverProps> = ({
+const DatePopverContent: FC<IFilterPopoverProps> = ({
     column,
     appliedFilter,
     handleFilter,
     dataType = 'string',
-    handleClearFilterfn
+    handleClearFilter
 }) => {
     const [firstSelectedDate, setFirstSelectedDate] = useState<Date | null>(null);
     const [secondSelectedDate, setSecondSelectedDate] = useState<Date | null>(null);
@@ -82,7 +82,7 @@ const DatePopverContent: FC<IFiterPopoverProps> = ({
                 <Button
                     appearance="secondary"
                     className={Styles.Clear}
-                    onClick={() => handleClearFilterfn(column)}
+                    onClick={() => handleClearFilter(column)}
                 >
                     Clear
                 </Button>
